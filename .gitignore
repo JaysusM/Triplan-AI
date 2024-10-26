@@ -1,0 +1,69 @@
+# Ignore LLM models
+*.gguf
+
+# Ignore virtual environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore environment variable files
+.env
+*.env
+
+# Ignore instance and config files
+instance/
+config.py
+
+# Ignore log files
+*.log
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore mypy cache
+.mypy_cache/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore ai-models directory
+ai-models/*
+
+# gitignore for flask
