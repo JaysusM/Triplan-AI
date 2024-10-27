@@ -26,17 +26,24 @@ The main goal of this project is to create a schedule of places you would like t
    cd triplan-ai
    ```
 
-2. **Install the required Python packages:**
+2. **Create and activate a virtual environment:**
+
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. **Install the required Python packages:**
 
    ```sh
    pip install -r requirements.txt
    ```
 
-3. **Add the Llama model:**
+4. **Add the Llama model:**
 
 Download the Llama model (you can use [HuggingFace](https://huggingface.co/models)) and place it in the ai-models folder. Ensure the model file is named appropriately, for example, Llama-3.2-1B-Instruct-Q6_K.gguf.
 
-4. Start the Flask application:
+5. Start the Flask application:
 
    ```sh
    python .
