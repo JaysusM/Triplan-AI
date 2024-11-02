@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SuggestedPlaces from './pages/SuggestedPlaces';
+import SuggestedPlaces from './pages/PlacesPlanning';
 import Home from './pages/Home';
 
 const App: React.FC = () => {

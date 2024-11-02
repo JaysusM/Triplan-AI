@@ -15,6 +15,9 @@ def generate_response(user_message, system_message="You are an expert in tourism
     Returns:
     - str: The generated response from the model.
     """
+    if max_tokens > 2048:
+        print("WARNING: Max tokens greater than 2048 may cause the model to generate unsafe content.")
+
     # Suppress stdout and stderr
     original_stdout = sys.stdout
     original_stderr = sys.stderr
@@ -32,7 +35,11 @@ def generate_response(user_message, system_message="You are an expert in tourism
         sys.stderr = original_stderr
 
     # Prompt creation
-    prompt = f"""<s>[INST] <<SYS>>{system_message}<</SYS>>{user_message} [/INST]"""
+    prompt = (
+        f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>"
+        f"{system_message}<|eot_id|><|start_header_id|>user<|end_header_id|>"
+        f"{user_message}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
+    )
 
     # Run the model
     response = model(prompt, max_tokens=max_tokens, echo=False)
@@ -43,5 +50,10 @@ def generate_response(user_message, system_message="You are an expert in tourism
     # Trim the prompt from the response if necessary
     if generated_text.startswith(prompt):
         generated_text = generated_text[len(prompt):].strip()
+
+    if response['choices'][0]['finish_reason'] != 'stop':
+        user_message = f"Continue from: {generated_text}"
+        response = generate_response(user_message, max_tokens=2048)
+        generated_text += response
 
     return generated_text
