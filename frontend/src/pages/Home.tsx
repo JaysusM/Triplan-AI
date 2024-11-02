@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import CitySelector from "../components/CitySelector";
+import { useNavigate } from 'react-router-dom';
+import CitySelector from '../components/CitySelector';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();

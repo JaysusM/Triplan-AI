@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import API from "../utils/api";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import API from '../utils/api';
 
 const SuggestedPlaces: React.FC = () => {
   const { city } = useParams<{ city: string }>();
@@ -18,12 +18,11 @@ const SuggestedPlaces: React.FC = () => {
       }
 
       try {
-        const suggestions = await API.getPlacesAndActivitiesSuggestionsByCity(
-          city
-        );
+        const suggestions =
+          await API.getPlacesAndActivitiesSuggestionsByCity(city);
         setPlaces(suggestions);
       } catch {
-        setError("Failed to fetch suggestions. Please try again later.");
+        setError('Failed to fetch suggestions. Please try again later.');
       } finally {
         setLoading(false);
       }

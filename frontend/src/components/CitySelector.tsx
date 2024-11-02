@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Select from "react-select";
+import React, { useState } from 'react';
+import Select from 'react-select';
 
 interface CityOption {
   value: string;
@@ -11,16 +11,16 @@ interface CitySelectorProps {
 }
 
 const topCities: CityOption[] = [
-  { value: "Bangkok", label: "Bangkok" },
-  { value: "Paris", label: "Paris" },
-  { value: "London", label: "London" },
-  { value: "Dubai", label: "Dubai" },
-  { value: "Singapore", label: "Singapore" },
-  { value: "Kuala Lumpur", label: "Kuala Lumpur" },
-  { value: "New York", label: "New York" },
-  { value: "Istanbul", label: "Istanbul" },
-  { value: "Tokyo", label: "Tokyo" },
-  { value: "Antalya", label: "Antalya" },
+  { value: 'Bangkok', label: 'Bangkok' },
+  { value: 'Paris', label: 'Paris' },
+  { value: 'London', label: 'London' },
+  { value: 'Dubai', label: 'Dubai' },
+  { value: 'Singapore', label: 'Singapore' },
+  { value: 'Kuala Lumpur', label: 'Kuala Lumpur' },
+  { value: 'New York', label: 'New York' },
+  { value: 'Istanbul', label: 'Istanbul' },
+  { value: 'Tokyo', label: 'Tokyo' },
+  { value: 'Antalya', label: 'Antalya' },
 ];
 
 const CitySelector: React.FC<CitySelectorProps> = ({ onChange }) => {
